@@ -20,23 +20,53 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 1.6rem;
   line-height: 1.5;
-  background-color: #ffffff;
   color: #000000;
   margin: 0;
   padding: 0;
   
 }
 
+/* dark mode styles */
 .dark-mode {
-  background-color: var(--dark-red);
-  color: #fff;
+  background-color: #500000;
+  color: #ffffff;
 }
 
+.main.dark-mode {
+  background-color: #500000;
+}
 
+/* Cambia el fondo de input, output y symbols en modo oscuro */
+.dark-mode .input {
+  background-color: #000000;
+  color: #ffffff; /* Cambia el color del texto para una mejor legibilidad en el modo oscuro */
+}
+
+.dark-mode .input-keyboard {
+  background-color: #000000;
+}
+
+.dark-mode .output-container {
+  background-color: #000000;
+  color: #ffffff; /* Cambia el color del texto para una mejor legibilidad en el modo oscuro */
+}
+
+.dark-mode .symbols {
+  background-color: #000000;
+}
+
+.dark-mode .acc-btn {
+  background-color: #500000;
+}
+
+.dark-mode .ln-btn {
+  border-color: #500000;
+  color: #500000;
+}
 /* Header */
 
 .header {
-  height: 15vh;
+  height: 14vh;
 
   display: flex;
   flex-direction: row;
@@ -51,6 +81,7 @@ body {
 /* Logo */
 
 .logo {
+  width: 40rem;
   font-size: 6rem;
   font-weight: 700;
   text-decoration: none;
@@ -58,9 +89,14 @@ body {
   position: relative;
   left: 4rem;
   color: #ffffff;
+  background-image: url("circle-square.svg");
+  background-repeat: no-repeat;
+  background-position: 25rem;
+  background-size: 55px 55px;
 }
 
-/* Navbar */
+
+/* Navbar----------------------------------------------------------------------------------------> */
 
 .navbar {
   display: flex;
@@ -77,6 +113,10 @@ body {
 
 /* language button */
 .ln-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   height: 5rem;
   width: 10rem;
   font-size: 2rem;
@@ -84,20 +124,31 @@ body {
   background-color: var(--main);
   color: white;
   border: 2px white solid;
-
   border-radius: 4px;
+  transition: .4s;
+
+  cursor: pointer;
 }
+
 
 /* account button */
 .acc-btn {
-  height: 7rem;
-  width: 7rem;
+  height: 6rem;
+  width: 6rem;
 
   background-color: white;
   color: black;
-  border: 2px black solid;
-
+  border: none;
   border-radius: 50%;
+
+  background-image: url("user.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 40px 40px;
+  transition: .4s;
+
+
+  cursor: pointer;
 }
 
 
@@ -161,4 +212,150 @@ input:checked + .slider:before {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 35px 35px;
+}
+
+
+/* navbar-----------------------------------------------------------------------------------------------> */
+
+
+/* Main-------------------------------------------------------------------------------------------------> */
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 85vh;
+  width: 100%;
+  padding: 2rem;
+  background-color: #ffffff;
+}
+
+/* input container */
+
+.input-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 10%;
+  width: 50%;
+  padding: 2rem;
+}
+
+.input-with-kb-btn{
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+/* input */
+.input {
+  height: 8rem;
+  width: 100%;
+  font-size: 2rem;
+  padding: 1rem;
+  border: none;
+  background-color: #f0f0f0;
+  border: 2px solid var(--main);
+  border-radius: 8px 0 0 8px;
+  outline: none;
+  transition-duration: 0.4s;
+}
+
+.input-keyboard {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  height: 4rem;
+  width: 4rem;
+  border: none;
+  border-left: none;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  
+  background-image: url("keyboard.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 40px;
+}
+
+/* solve-button */
+.solve-btn {
+  height: 8rem;
+  width: 10rem;
+  font-size: 2rem;
+  padding: 1rem;
+  border: 2px solid var(--main);
+  border-radius: 0 8px 8px 0;
+  outline: none;
+  background-color: var(--main);
+  color: white;
+  cursor: pointer;
+
+  background-image: url("circle-square.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50px;
+}
+
+/* output container */
+
+.output-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 40%;
+  width: 85%;
+
+  text-align: justify;
+
+  border-radius: 1.5rem;
+  padding: 2rem;
+  background-color: #f0f0f0;
+  transition-duration: 0.4s;
+
+}
+
+.output {
+  font-size: 2rem;
+  text-align: justify;
+}
+
+/* symbols */
+
+.symbols {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  background-color: #f0f0f0;
+  border-radius: 1.5rem;
+
+  height: 25%;
+  gap: 10px;
+  padding: 1rem;
+  transition-duration: 0.4s;
+}
+
+.symbol-btn {
+  border: none;
+  border-radius: 1rem;
+
+  color: white;
+  background-color: var(--main);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.symbol-btn:hover {
+  box-shadow: #000000 0px 0px 6px;
 }
