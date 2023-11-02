@@ -1,0 +1,164 @@
+:root {
+  --main: #DA0000;
+  --dark-red: #500000;
+}
+
+
+/* globals */
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  background-color: #ffffff;
+  color: #000000;
+  margin: 0;
+  padding: 0;
+  
+}
+
+.dark-mode {
+  background-color: var(--dark-red);
+  color: #fff;
+}
+
+
+/* Header */
+
+.header {
+  height: 15vh;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  
+  padding: 2rem;
+  background-color: #DA0000;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo */
+
+.logo {
+  font-size: 6rem;
+  font-weight: 700;
+  text-decoration: none;
+  
+  position: relative;
+  left: 4rem;
+  color: #ffffff;
+}
+
+/* Navbar */
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  list-style: none;
+
+  width: 50rem;
+  padding: 1rem;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+
+/* language button */
+.ln-btn {
+  height: 5rem;
+  width: 10rem;
+  font-size: 2rem;
+
+  background-color: var(--main);
+  color: white;
+  border: 2px white solid;
+
+  border-radius: 4px;
+}
+
+/* account button */
+.acc-btn {
+  height: 7rem;
+  width: 7rem;
+
+  background-color: white;
+  color: black;
+  border: 2px black solid;
+
+  border-radius: 50%;
+}
+
+
+
+/* Dark mode Switch */
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 84px;
+  height: 54px;
+  
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #FFFFFF;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 46px;
+  width: 46px;
+  left: 4px;
+  bottom: 4px;
+  background-color: var(--main);
+  transition: .4s;
+  border-radius: 50%;
+  background-image: url("bulb-filled.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 35px 35px;
+
+}
+
+input:checked + .slider {
+  background-color: var(--dark-red);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--dark-red);
+}
+
+input:checked + .slider:before {
+  transform: translateX(30px);
+  background-image: url("brightness.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 35px 35px;
+}
