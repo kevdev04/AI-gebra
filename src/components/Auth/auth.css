@@ -1,0 +1,61 @@
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40rem;
+  height: 30rem;
+  margin: 0 auto;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  position:absolute;
+  right: 0rem;
+
+  
+}
+
+
+.sign-in {
+  width: 80%;
+  height: 4rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 1rem;
+
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  
+  font-size: 1.5rem;
+  background-color: white;
+  cursor: pointer;
+  
+}
+
+.sign-up {
+  width: 80%;
+  height: 4rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 1rem;
+
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  
+  font-size: 1.5rem;
+  background-color: white;
+  cursor: pointer;
+}
+.auth-container.hidden {
+  display: none;
+  transition: .4s;
+}

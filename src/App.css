@@ -26,6 +26,18 @@ body {
   
 }
 
+/* toggle actions */
+.symbols.hidden {
+  display: none;
+  transition: .4s;
+
+}
+.sign-in.hidden {
+  display: none;
+  transition: .4s;
+}
+
+
 /* dark mode styles */
 .dark-mode {
   background-color: #500000;
@@ -66,7 +78,7 @@ body {
 /* Header */
 
 .header {
-  height: 14vh;
+  height: 12vh;
 
   display: flex;
   flex-direction: row;
@@ -94,6 +106,8 @@ body {
   background-position: 25rem;
   background-size: 55px 55px;
 }
+
+/* sign in bar */
 
 
 /* Navbar----------------------------------------------------------------------------------------> */
@@ -337,6 +351,8 @@ input:checked + .slider:before {
   gap: 10px;
   padding: 1rem;
   transition-duration: 0.4s;
+  transition: .4s;
+  
 }
 
 .symbol-btn {

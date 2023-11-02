@@ -1,12 +1,24 @@
 import { useState } from "react";
 import "./App.css";
+import Auth from "./components/Auth/auth";
 
 function App() {
 	const [darkMode, setDarkMode] = useState(false);
+	const [showSymbols, setShowSymbols] = useState(false);
+	const [showSignIn, setShowSignIn] = useState(false);
 
 	const handleDarkModeToggle = () => {
 		setDarkMode(!darkMode);
 	};
+
+	const handleSymbolsToggle = () => {
+		setShowSymbols(!showSymbols);
+	};
+
+	const handleSignInToggle = () => {
+		setShowSignIn(!showSignIn);
+	};
+	
 
 	return (
 		<>
@@ -18,9 +30,7 @@ function App() {
 				<nav className="navbar">
 					<ul className="navbar">
 						<li>
-							<button className="ln-btn">
-								EN
-							</button>
+							<button className="ln-btn">EN</button>
 						</li>
 						<li>
 							<div className="switch-container">
@@ -31,20 +41,21 @@ function App() {
 							</div>
 						</li>
 						<li>
-							<button className="acc-btn"></button>
+							<button className="acc-btn" onClick={handleSignInToggle}></button>
 						</li>
 					</ul>
 				</nav>
 			</header>
+			<Auth showSignIn={showSignIn} />
 			<main className={darkMode ? "main dark-mode" : "main"}>
 				<section className="input-container">
 					<div className="input-with-kb-btn">
-					<input type="text" className="input" />
-					<button className="input-keyboard"></button>
+						<input type="text" placeholder="Insert a problem" className="input" />
+						<button className="input-keyboard" onClick={handleSymbolsToggle}></button>
 					</div>
 					<button className="solve-btn"></button>
 				</section>
-				<section className="symbols">
+				<section className={`symbols ${showSymbols ? "" : "hidden"}`}>
 					<button className="symbol-btn">+</button>
 					<button className="symbol-btn">-</button>
 					<button className="symbol-btn">&#215;</button>
